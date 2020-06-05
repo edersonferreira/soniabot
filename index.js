@@ -3,7 +3,7 @@ const options = require('./options')
 
 const client = new tmi.client(options.options)
 
-url = 'toramaru08'
+url = ''
 
 client.connect()
 
