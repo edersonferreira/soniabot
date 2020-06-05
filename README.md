@@ -1,6 +1,6 @@
 # Sonia Bot
 
-Sonia bot is only a funny twitch bot, for Tustra's stream.
+Sonia bot is only a funny twitch bot, for [Tustra's stream](https://www.twitch.tv/tustra_).
 
 ## !git
 
