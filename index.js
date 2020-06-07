@@ -3,24 +3,21 @@ const options = require('./options');
 
 const client = new tmi.client(options.options);
 
-url = 'edersonferreiradev';
+url = options.options.channels[0];
 
 client.connect();
 
 client.on('connected', (address, port) => {});
 
 client.on('chat', (channel, user, message, self) => {
-  client.color('blue');
-  if (message.match(/!git */)) {
-    let gitDir = message.replace(/!git /, '');
-    let type;
-    gitDir.includes('/') ? (type = 'repositório') : (type = 'usuário');
-    githubUrl = `https://github.com/${gitDir}`;
-    client.action(
-      url,
-      `@${user['display-name']} Seu ${type} está aqui: ${githubUrl}`,
-    );
-  }
+  console.log(message)
+  if (message.match(/!git */) ){
+    let gitDir = message.replace(/!git /, '')
+    let type
+    gitDir.includes('/') ? type = 'repositório' : type = 'usuário'
+    githubUrl = `https://github.com/${gitDir}`
+    client.action(url, `@${user['display-name']} Seu ${type} está aqui: ${githubUrl}`)
+}
 
   if (message.match(/!soniae */)) {
     let quality = message.replace(/!soniae /, '').toLowerCase();
